@@ -1,0 +1,13 @@
+node_modules
+dist
+coverage
+playwright-report
+test-results
+public/packages
+src/generated
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+npm-debug.log*
+.DS_Store

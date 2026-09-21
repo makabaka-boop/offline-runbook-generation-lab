@@ -1,0 +1,33 @@
+{
+  "name": "offline-manual-drill",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:packages": "node scripts/generate-packages.mjs",
+    "predev": "npm run generate:packages",
+    "prebuild": "npm run generate:packages",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test:run": "vitest run",
+    "test": "vitest",
+    "test:e2e": "playwright test",
+    "verify": "npm run test:run && npm run build && playwright test"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^7.1.12"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "typescript": "~5.6.3",
+    "vitest": "^4.1.11"
+  }
+}

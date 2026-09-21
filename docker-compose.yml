@@ -1,0 +1,19 @@
+services:
+  web:
+    build:
+      context: .
+      target: web
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    restart: unless-stopped
+
+  verify:
+    build:
+      context: .
+      target: verify
+    command: ["npm", "run", "verify"]
+    depends_on:
+      web:
+        condition: service_healthy
+    profiles:
+      - verify
